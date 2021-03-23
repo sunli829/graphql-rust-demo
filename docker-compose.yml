@@ -113,6 +113,21 @@ services:
     ports:
       - 4000:4000
 
+  # GraphGate
+  graphgate:
+    image: scott829/graphgate:latest
+    container_name: graphgate
+    restart: always
+    depends_on:
+      - planets-service
+      - satellites-service
+      - auth-service
+    command: /graphgate.toml
+    volumes:
+      - ./graphgate.toml:/graphgate.toml
+    ports:
+      - 5000:5000
+
   zookeeper:
     image: wurstmeister/zookeeper
     container_name: zookeeper

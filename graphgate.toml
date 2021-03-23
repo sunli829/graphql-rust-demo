@@ -1,0 +1,13 @@
+bind = "0.0.0.0:5000"
+
+[[services]]
+name = "planets-service"
+addr = "planets-service:8001"
+
+[[services]]
+name = "satellites-service"
+addr = "satellites-service:8002"
+
+[[services]]
+name = "auth-service"
+addr = "auth-service:8003"
